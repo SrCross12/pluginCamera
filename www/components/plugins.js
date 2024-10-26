@@ -2,10 +2,15 @@
 
 $(document).on("click", "#camera", function(){
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI });
+    destinationType: Camera.DestinationType.FILE_URI,
+    
+     correntOrientation: true,
+    saveToPhotoAlbum: true
 
+    });
+   
 function onSuccess(imageURI) {
-    var image = document.getElementById('myImage');
+    var image = document.getElementById('imagem');
     image.src = imageURI;
 }
 
